@@ -1,6 +1,6 @@
 SilverStripe\GraphQL\Controller:
   cors:
-    Enabled: true
+    Enabled: false
     Allow-Origin: '*'
     Allow-Headers: 'Authorization, Content-Type'
     Allow-Methods:  'GET, POST, OPTIONS'
@@ -9,11 +9,6 @@ SilverStripe\GraphQL\Controller:
 SilverStripe\GraphQL\GraphQLExtension:
   enabled: true
 SilverStripe\Core\Injector\Injector:
-  SilverStripe\GraphQL\QueryHandler\QueryHandlerInterface.default:
-    class: SilverStripe\GraphQL\QueryHandler\QueryHandler
-    properties:
-      Middlewares:
-        csrf: false
   SilverStripe\GraphQL\Controller.myNewSchema:
     class: SilverStripe\GraphQL\Controller
     constructor:
@@ -22,10 +17,6 @@ SilverStripe\Control\Director:
   rules:
     'graphql': '%$SilverStripe\GraphQL\Controller.default'
     'my-graphql': '%$SilverStripe\GraphQL\Controller.myNewSchema'
-SilverStripe\GraphQL\Auth\Handler:
-  authenticators:
-    - class: SilverStripe\GraphQL\Auth\BasicAuthAuthenticator
-      priority: 10
 SilverStripe\GraphQL\Schema\Schema:
   schemas:
     default:

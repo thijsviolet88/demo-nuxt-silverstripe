@@ -10,6 +10,8 @@ import { setContext } from '@apollo/client/link/context'
 export default defineNuxtPlugin(() => {
   const { silverStripeToken, silverStripeApi } = useRuntimeConfig()
 
+  process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
+
   const httpLink = createHttpLink({
     uri: silverStripeApi
   })
@@ -19,7 +21,7 @@ export default defineNuxtPlugin(() => {
     return {
       headers: {
         ...headers,
-        authorization: silverStripeToken
+        Authrization: `Basic ${silverStripeToken}`
       }
     }
   })

@@ -5,29 +5,17 @@ export default defineNuxtConfig({
     'github:Violet88github/Nuxt-skeleton'
   ],
   modules: [
-    // '@nuxt/image',
-    // '@formkit/nuxt',
-    // 'nuxt-lodash',
-    // 'nuxt-simple-sitemap',
-    // 'nuxt-icon',
-    // '@nuxtjs/tailwindcss',
-    // '@vueuse/nuxt',
     '@nuxtjs/apollo'
-  ],
-  css: [
-    '@/assets/css/main.css'
   ],
   apollo: {
     clients: {
       default: {
-        httpEndpoint: 'https://event-planner.local/graphql'
+        httpEndpoint: 'http://demo-nuxt-silverstripe.local/graphql'
       }
     },
   },
-  postcss: {
-    plugins: {
-      tailwindcss: {},
-      autoprefixer: {},
-    },
+  runtimeConfig: {
+    silverStripeToken: process.env.API_TOKEN,
+    silverStripeApi: process.env.API_URL,
   },
 })

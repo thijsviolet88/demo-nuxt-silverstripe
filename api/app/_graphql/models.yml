@@ -1,3 +1,9 @@
+DNADesign\Elemental\Models\BaseElement:
+  fields: '*'
+  operations: '*'
 Page:
+  fields: '*'
+  operations: '*'
+DNADesign\Elemental\Models\ElementalArea:
   fields: '*'
   operations: '*'
