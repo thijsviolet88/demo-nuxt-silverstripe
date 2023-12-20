@@ -4,17 +4,15 @@ namespace App\Elements;
 
 use DNADesign\Elemental\Models\BaseElement;
 use SilverStripe\Forms\TextField;
-use SilverStripe\Forms\HTMLEditor\HTMLEditorField;
 
 class UpdateBlock extends BaseElement {
     private static $table_name = "Update";
     private static $singular_name = "Update";
     private static $plural_name = 'Updates';
-    private static $description = 'Updates';
-    private static $icon = 'font-icon-plus-circled';
+    private static $description = 'Update';
+    private static $icon = 'font-icon-menu-files';
     private static $db = [
         'Title' => 'Text',
-        'Content' => 'HTMLText',
     ];
 
     public function getCMSFields() {
@@ -22,7 +20,6 @@ class UpdateBlock extends BaseElement {
 
         $fields->addFieldsToTab('Root.Main', [
             TextField::create('Title', 'Update title'),
-            HTMLEditorField::create('Content', 'Content for section'),
         ]);
 
         return $fields;

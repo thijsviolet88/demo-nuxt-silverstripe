@@ -16,4 +16,5 @@ const Components = {
 };
 
 const pageLayout = parseSilverStripeNames(props.pageData?.type)?.toLocaleLowerCase();
+
 </script>
